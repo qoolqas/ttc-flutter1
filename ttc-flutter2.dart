@@ -1,34 +1,38 @@
 import 'dart:io';
 
 void main() {
-print("Temperature Conversion Program");
-  print("1. Fahrenheit to Celsius");
-  print("2. Réaumur to Celsius");
-  print("3. Kelvin to Celsius");
-  stdout.write("Enter your choice (1/2/3): ");
+  print("Program Konversi Suhu");
+  print("1. Fahrenheit ke Celsius");
+  print("2. Reaumur ke Celsius");
+  print("3. Kelvin ke Celsius");
+  stdout.write("Masukkan pilihan Anda (1/2/3): ");
   
-  int choice = int.parse(stdin.readLineSync()!);
-  
-  double temperature;
-  switch(choice) {
-    case 1:
-      stdout.write("Enter temperature in Fahrenheit: ");
-      temperature = double.parse(stdin.readLineSync()!);
-      print("Temperature in Celsius: ${fahrenheitToCelsius(temperature)}°C");
-      break;
-    case 2:
-      stdout.write("Enter temperature in Réaumur: ");
-      temperature = double.parse(stdin.readLineSync()!);
-      print("Temperature in Celsius: ${reaumurToCelsius(temperature)}°C");
-      break;
-    case 3:
-      stdout.write("Enter temperature in Kelvin: ");
-      temperature = double.parse(stdin.readLineSync()!);
-      print("Temperature in Celsius: ${kelvinToCelsius(temperature)}°C");
-      break;
-    default:
-      print("Invalid choice");
-      break;
+  try {
+    int choice = int.parse(stdin.readLineSync()!);
+    
+    double temperature;
+    switch(choice) {
+      case 1:
+        stdout.write("Masukkan suhu dalam Fahrenheit: ");
+        temperature = double.parse(stdin.readLineSync()!);
+        print("Suhu dalam Celsius: ${fahrenheitToCelsius(temperature)}°C");
+        break;
+      case 2:
+        stdout.write("Masukkan suhu dalam Reaumur: ");
+        temperature = double.parse(stdin.readLineSync()!);
+        print("Suhu dalam Celsius: ${reaumurToCelsius(temperature)}°C");
+        break;
+      case 3:
+        stdout.write("Masukkan suhu dalam Kelvin: ");
+        temperature = double.parse(stdin.readLineSync()!);
+        print("Suhu dalam Celsius: ${kelvinToCelsius(temperature)}°C");
+        break;
+      default:
+        print("Pilihan tidak valid");
+        break;
+    }
+  } catch (e) {
+    print("Terjadi kesalahan: $e");
   }
 }
 
